@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+    
+        <title>Mawzoon</title>
+    
+        <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/cover/">
+    
+    </head>
+    <body>
+        <div class="container-fluid h-100 d-flex justify-content-center align-items-center" style="margin-top: 70px; margin-bottom: 70px;">
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="card">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="images p-3">
+                                    <div class="text-center p-4"> <img id="main-image" src="{{ tea.image.url }}" class="img-fluid" /> </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="product p-4">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <a href="javascript:history.back()" class="d-flex align-items-center"> <i class="fa fa-long-arrow-left"></i> <span class="ml-1">Back</span> </a> <i class="fa fa-shopping-cart text-muted"></i>
+                                    </div>
+                                    <div class="mt-4 mb-3"> <span class="text-uppercase text-muted brand"></span>
+                                        <h2 class="text-uppercase">{{ tea.Name }}</h2>
+                                        <div class="price d-flex flex-row align-items-center">
+                                            <span class="act-price"><h4>Price: {{ tea.Price }}</h4></span>
+                                        </div>
+                                        <div>
+                                            <h4>In Stock: {{ tea.In_stock }}</h4>
+                                        </div>
+                                    </div>
+                                    <h4 class="about">{{ tea.details }}</h4>
+                                    <div class="cart mt-4 align-items-center"> <a href="{% url 'checkout' %}" class="btn btn-danger text-uppercase mr-2 px-4">Buy Now</a> <i class="fa fa-heart text-muted"></i> <i class="fa fa-share-alt text-muted"></i> </div>
+                                    <div class="cart mt-4 align-items-center"> <a href="{% url 'reviews' %}" class="btn btn-outline-secondary text-uppercase mr-2 px-4">Rivews</a> <i class="fa fa-heart text-muted"></i> <i class="fa fa-share-alt text-muted"></i> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+{% endblock %}
